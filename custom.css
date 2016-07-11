@@ -1,0 +1,28 @@
+.whatevs {
+	background: #0D1313;
+
+}
+em {
+	color:white;
+}
+
+.title-header {
+	text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blue;
+}
+.col-sm-6 {
+	font-size: 20px;
+	padding: 50px;
+	text-align: left;
+}
+
+.navigation-bar {
+    position: relative;
+    padding: 5px;
+    background-color: #1875b9;
+    text-align: center;
+    height:40px;
+
+}
