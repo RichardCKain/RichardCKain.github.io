@@ -13,13 +13,16 @@ em {
     border-width: 1px;
     border-color: blue;
     background-color: yellow;
+    margin:25px;
 }
+
 .col-sm-6 {
 	font-size: 20px;
 	padding: 50px;
 	text-align: left;
     line-height: 175%;
 }
+
 .col-sm-12 {
     font-size: 20px;
     padding: 50px;
