@@ -1,120 +1,598 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>How to Woovit</title>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script> eliminating this as redundant-->
-  
-  <link rel="stylesheet" type="text/css" href="custom.css">
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+</style>
 
-  </head>
+<base target="_blank">
 
-  <body>
+</head>
 
 
-  <div class="navigation-bar">
-    <em>How to Woovit - this will be replaced by normal ReactJS nav bar</em> 
+
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>The Art Exhibit Search Sheet</h1>
   </div>
 
-<!--
-<div class="container">
-  <p>Maybe Put A Nav Bar here?</p>
+<!-- search bar  -->
 
-</div>
--->
-
-  <div class="row">
-    <div class="col-sm-6" style="background-color:white;">
-		<h1 class="title-header">
-                            <div>SEARCH</div>
-                        </h1>
-    	<p>Lets say you're the brand manager for <a href="http://store.steampowered.com/app/394360/">Hearts of Iron</a> from Paradox. How should you find good streamers to reach out to? You could try a game name directly, like 'Hearts of Iron', check a related title like 'Civilization 5', or a genre like 'Grand Strategy'. Woovit searches the Title, Description and Meta tags from all our streamers' YouTube and Twitch feeds.</p>
-
-    </div>
-    <div class="col-sm-6"><img class="img-responsive" src="https://richardckain.github.io/Step1.JPG" alt="Search for Hearts of Iron in Woovit"> </div>
-</div>
-
-<div class="container">
-  <div class="well">Woovit's database has over 2,500 streamers now. Missing anyone? <a href="mailto:hello@woovit.com?Subject=Missed%20Someone" target="_top">Email us!</a></div>
-</div>
-
-  <div class="row" id="offset">
-    <div class="col-sm-6">
-    <h1 class="title-header">
-                            <div>FIND</div>
-                        </h1>
-      <p>Woovit provides a list of streamers that match your term - by default sorted by Relevance, though you may use the drop down menu to sort by number of YouTube or Twitch subscribers. You can add as many of these to a list directly from the search results by clicking on the check boxes in the upper right of the streamer's rectangle. Or you can click on any streamer profile to examine further.</p>
-
-      <p> Benjamin Magnus looks like an up and coming streamer. Click on that result to learn more.</p>
-
-    </div>
-    <div class="col-sm-6"><img class="img-responsive" src="https://richardckain.github.io/Step2.JPG" alt="Find Individual Streamers in Woovit"> </div>
-</div>
-
-<div class="container">
-  <div class="well">The heart icons show an at-a-glance summary of streamers' YouTube Subscribers and Twitch Followers</div>
-</div>
-
-  <div class="row">
-    <div class="col-sm-6">
-    <h1 class="title-header">
-                            <div>EXAMINE</div>
-                        </h1>
-      <p>The resulting page uses your search term to look within all Benjamin Magnus Games's videos. To see all of his videos, and search his work more thoroughly, click on his profile or "show all videos". The graphs on the upper right give historic data on his viewership--click to expand for a larger view. His professional email and twitter handle are there as well. The "Tags" sections are tags the most frequent tags he uses across all videos. We also have their Twitter and contact information if any.</p>
-
-      <p>Clearly this is someone very interested in the game, and you should seek to develop a relationship. Click the yellow "Add to List" button next to his name.</p>
-
-    </div>
-    <div class="col-sm-6"><img class="img-responsive" src="https://richardckain.github.io/Step3.JPG" alt="See Historic Streamer Data and their Social Media Presence"> </div>
-</div>
-
-<div class="container">
-  <div class="well">Tags will give a good view of the channel's overall interests - and in some cases, whether SEO is gamed.</div>
-</div>
-
-  <div class="row" id="offset">
-    <div class="col-sm-6">
-    <h1 class="title-header">
-                            <div>MANAGE</div>
-                        </h1>
-      <p>(For Registered Users) After a list interface pops up, you can choose which of your lists to add Benjamin Magnus to. Unlike maintaining your streamer lists in a spreadsheet, the data is automatically updated daily. You can export this list to a .csv file for use in a standalone spreadsheet if you wish.</p>
-
-    </div>
-    <div class="col-sm-6"><img class="img-responsive" src="https://richardckain.github.io/Step4.JPG" alt="Add Streamers to Lists in Woovit"> </div>
-</div>
-
-<div class="container">
-  <div class="well">Updating spreadsheets is a pain, let Woovit do it for you!</div>
-</div>
+  <div data-role="main" class="ui-content">
+    <form>
+      <input id="filterTable-input" data-type="search" placeholder="Search For Museums or exhibitions...">
+    </form>
 
 
-  <div class="row">
-    <div class="col-sm-6">
-    <h1 class="title-header">
-                            <div>BE ALERTED</div>
-                        </h1>
-      <p>Newsflash: there are a lot of videos online. You can get email alerts from YouTube and Twitch when a streamer has new content. But you can't filter by search term, or number of views. You can also get alerts when the influence of their channel increases. We need your email to alert you, so register to get alerts!</p>
 
-    </div>
-    <div class="col-sm-6"><img class="img-responsive" src="https://richardckain.github.io/Step5.JPG" alt="Get Email Alerts from Woovit on Streamer Video or Subscriber Activity"> </div>
-</div>
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+      <thead>
+        <tr>
 
-<div class="container">
-  <div class="well">Other alert options are coming soon!</div>
-</div>
+        <!--removed data priority 6-->
 
-<div class="row">
-  <div class="col-sm-12" id="offset">
-  <h1>We hope this has been a good introduction to Woovit. Play around with it further and <a href="mailto:hello@woovit.com?Subject=Suggestions" target="_top">let us know what other problems we can solve for you!</a>
-    <p></p>
-    <p style="text-align:center;">Now, back to <a href="http://www.Woovit.com">Woovit</a></p>
+        <!--could add small image to catalog book here as first column??-->
+
+          <th data-priority="2">Exhibition</th>
+          <th data-priority="3">Location</th>
+          <th data-priority="4">City or Region</th>
+          <th data-priority="5">Start</th>
+          <th data-priority="1">Finish</th>
+          <!-- <th data-priority="6">Artists</th> eliminating this for 1.0-->
+          <!--could add link to catalog book here as seventh column??-->
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/birds-of-a-feather">Birds of a Feather: Joseph Cornell's Homage to Juan Gris</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Apr 15</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/thomas-cole">Thomas Cole's Journey: Atlantic Crossings</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 13</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/leon-golub">Leon Golub: Raw Nerve</a></td>
+          <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 27</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/golden-kingdoms">Golden Kingdoms: Luxury & Legacy in the Ancient Americas</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 28</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/like-life">Like Life: Sculpture, Color, and the Body (1300–Now)</a></td>
+          <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 22</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/public-parks-private-gardens">Public Parks, Private Gardens: Paris to Provence</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 29</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/diamond-mountains">Diamond Mountains: Travel and Nostalgia in Korean Art</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 20</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/william-eggleston-los-alamos">William Eggleston: Los Alamos</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 28</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/poetry-of-nature">The Poetry of Nature: Edo Paintings from the Fishbein-Bender Collection</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jan 21, 2019</td>
+
+        </tr>
+
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/drawings-and-prints-february-rotation">Selections from the Department of Drawings and Prints: Portraits and States</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Apr 30</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/portable-storage">Portable Storage: Tribal Weavings from the Collection of William and Inger Ginsberg</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 7, 2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/scholastic-awards">Scholastic Art & Writing Awards: New York City Regional Exhibition</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 28</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/american-painters-in-italy">American Painters in Italy: From Copley to Sargent</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>June 17</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/year-of-dog">Celebrating the Year of the Dog</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 4</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/william-wegman">Before/On/After: William Wegman and California Conceptualism</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 15</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/spirited-creatures">Spirited Creatures: Animal Representations in Chinese Silk and Lacquer</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 22</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/passion-for-jade">A Passion for Jade: Heber Bishop and His Collection</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 22</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/public-service-announcement">Public Service Announcement: Works by Eva Koťátková and Rachel Harrison</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 29</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/ranjani-shettar">Ranjani Shettar: Seven ponds and a few raindrops</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Aug 12</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/face-of-dynasty-royal-crests-western-cameroon">The Face of Dynasty: Royal Crests from Western Cameroon</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Sep 3</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/kharga-oasis">Art and Peoples of the Kharga Oasis</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Sep 30</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/crowns-of-vajra-masters">Crowns of the Vajra Masters: Ritual Art of Nepal</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Dec 16</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/secret-life-of-textiles">The Secret Life of Textiles: The Milton Sonday Archive</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Dec 31, 2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/dangerous-beauty">Dangerous Beauty: Medusa in Classical Art</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jan 6, 2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/japanese-arms-and-armor">Japanese Arms and Armor from the Collection of Etsuko and John Morris</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jan 6, 2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/relative-values-northern-renaissance">Relative Values: The Cost of Art in the Northern Renaissance</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>June 23, 2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/streams-and-mountains">Streams and Mountains without End: Landscape Traditions of China</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Aug 18</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/GrantWood">Grant Wood: American Gothic and Other Fables</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jun 10</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/ZoeLeonard">Zoe Leonard: Survey</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jun 10</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/BetweenTheWaters">Between The Waters</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 22</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/AnIncompleteHistoryOfProtest">An Incomplete History of Protest: Selections from the Whitney’s Collection, 1940–2017</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/JuanAntonioOlivares">Juan Antonio Olivares: Moléculas</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jun 10</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/ChristineSunKim">Christine Sun Kim: Too Much Future</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/WhereWeAre">Where We Are: Selections from the Whitney's Collection, 1900-1960</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/NickMauss">Nick Mauss: Transmissions</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 14</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/HaroldEdgerton">Flash: Photographs by Harold Edgerton from the Whitney's Collection</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/SibylKempson">Silby Kempson: 12 Shouts to the Ten Forgotten Heavens</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>2x a year</td>
+          <td>Equinox Dec 2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.frick.org/exhibitions/zurbaran">Zurbarán's Jacob and His Twelve Sons: Paintings from Auckland Castle</a></td>
+          <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Apr 22</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.frick.org/exhibitions/du_paquier">Fired by Passion: Masterpieces of Du Paquier Porcelain from the Sullivan Collection</a></td>
+          <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Aug 12</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/danh-vo">Danh Vo: Take My Breath Away</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 9</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/thannhauser-collection">Thannhauser Collection</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/guggenheim-collection-brancusi">Guggenheim Collection: Brancusi</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3924">Adrian Piper: A Synthesis of Intuitions, 1965–2016</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jul 22</td>
+
+        </tr>
+
+
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3871">Tarsila do Amaral: Inventing Modern Art in Brazil</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jun 3</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3769">Stephen Shore</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>May 28</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3886">Being: New Photography 2018</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Aug 19</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3879">The Long Run</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Nov 4</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3928">Maria Lassnig: New York Films 1970–1980</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Jun 18</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3925">Julia Phillips: Failure Detection</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Apr 15</td>
+          <td>Sep 3</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3926">Projects 108: Gauri Gill</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Apr 15</td>
+          <td>Sep 3</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4963">Fernando Palma Rodríguez: In Ixtli in Yolotl</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Apr 15</td>
+          <td>Sep 10</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4968">Land: Zhang Huan and Li Binyuan</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Apr 15</td>
+          <td>Sep 3</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4956">Young Architects Program 2018: Hide & Seek by Dream the Combine</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>June</td>
+          <td>September</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3929">Reza Abdoh</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Jun 3</td>
+          <td>Sep 3</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3852">Bruce Nauman: Disappearing Acts</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>Oct 21</td>
+          <td>Mar 17, 2019</td>
+
+        </tr>
+
+
+
+
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <div data-role="footer">
+    <h1>Hope this was useful! Send comments and suggestions to rich@triplepointpr.com</h1>
   </div>
 </div>
 
-<!-- Add Footer -->
+</body>
+</html>
