@@ -17,8 +17,6 @@ tr:nth-child(even) {
 
 <base target="_blank">
 
-<script src="sorttable.js"></script>
-
 </head>
 
 
@@ -39,7 +37,7 @@ tr:nth-child(even) {
 
 
 
-    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow sortable" id="myTable" data-filter="true" data-input="#filterTable-input"> <!--two classes here...which win? 'inheritance' discussed, got rid of class="ui-responsive ui-shadow" -->
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
       <thead>
         <tr>
 
@@ -47,13 +45,13 @@ tr:nth-child(even) {
 
         <!--could add small image to catalog book here as first column??-->
 
-          <th>Exhibition</th> <!--doesn't work as 'sortTable(0)' weirdly...other columns work....nope it's the html issue so removed onclick="sortTable(0)" and removed data-priority="2"-->
-          <th>Location</th> <!--removed  onclick="sortTable(1)" -->
-          <th>City or Region</th>
-          <th>Start</th>
-          <th>Finish</th>
+          <th  data-priority="1">Exhibition</th> <!--doesn't work as 'sortTable(0)' weirdly...other columns work....nope it's the html issue so removed onclick="sortTable(0)"-->
+          <th data-priority="2">Location</th> <!--removed  onclick="sortTable(1)" -->
+          <th onclick="sortTable(2)" data-priority="3">City or Region</th>
+          <th onclick="sortTable(3)" data-priority="5">Start</th>
+          <th onclick="sortTable(4)" data-priority="4">Finish</th>
           <!-- <th data-priority="6">Artists</th> eliminating this for 1.0-->
-          <!--could add link to catalog book here as seventh column?? ADDING SORTTABLE FROM W3...removing onclick="sortTable(2)" through (4)...to put in new js library-->
+          <!--could add link to catalog book here as seventh column?? ADDING SORTTABLE FROM W3-->
 
           </th>
         </tr>
@@ -65,7 +63,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180415">April 15</td>
+          <td>4/15/2018</td>
         </tr>
         <tr>
 
@@ -73,7 +71,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
         </tr>
         <tr>
 
@@ -81,7 +79,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
         </tr>
         <tr>
 
@@ -89,7 +87,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180528">May 28</td>
+          <td>5/28/2018</td>
 
         </tr>
 
@@ -99,7 +97,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
 
@@ -109,7 +107,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180729">July 29</td>
+          <td>7/29/2018</td>
 
         </tr>
 
@@ -119,7 +117,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180520">May 20</td>
+          <td>20/2018</td>
 
         </tr>
 
@@ -129,7 +127,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180528">May 28</td> <!--IMPORTANT. This is not 2019 but just put in to test-->
+          <td>5/28/2018</td>
 
         </tr>
 
@@ -139,7 +137,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190121">January 21, 2019</td>
+          <td>1/21/2019</td>
 
         </tr>
 
@@ -150,7 +148,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180430">April 30</td>
+          <td>4/30/2018</td>
 
         </tr>
         <tr>
@@ -159,17 +157,16 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190507">May 7, 2019</td>
+          <td>5/7/2019</td>
 
         </tr>
-
         <tr>
 
           <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/scholastic-awards">Scholastic Art & Writing Awards: New York City Regional Exhibition</a></td>
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180528">May 28</td>
+          <td>5/28/2018</td>
 
         </tr>
         <tr>
@@ -178,7 +175,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td  sorttable_customkey="20180617">June 17</td>
+          <td>June 17/2018</td>
 
         </tr>
         <tr>
@@ -187,7 +184,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180704">July 4</td>
+          <td>July 4/2018</td>
 
         </tr>
         <tr>
@@ -196,7 +193,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180715">July 15</td>
+          <td>July 15/2018</td>
 
         </tr>
 
@@ -206,7 +203,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>July 22/2018</td>
 
         </tr>
 
@@ -216,7 +213,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
         <tr>
@@ -225,7 +222,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180729">July 29</td>
+          <td>7/29/2018</td>
 
         </tr>
         <tr>
@@ -234,7 +231,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180812">August 12</td>
+          <td>8/12/2018</td>
 
         </tr>
         <tr>
@@ -243,7 +240,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180903">September 3</td>
+          <td>9/3/2018</td>
 
         </tr>
         <tr>
@@ -252,7 +249,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180930">September 30</td>
+          <td>9/30/2018</td>
 
         </tr>
 
@@ -262,7 +259,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181216">December 16</td>
+          <td>12/16/2018</td>
 
         </tr>
         <tr>
@@ -271,7 +268,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181231">December 31</td>
+          <td>12/31/2018</td>
 
         </tr>
         <tr>
@@ -280,7 +277,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190106">January 6, 2019</td>
+          <td>1/6/2019</td>
 
         </tr>
         <tr>
@@ -289,7 +286,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190106">January 6, 2019</td>
+          <td>1/6/2019</td>
 
         </tr>
         <tr>
@@ -298,7 +295,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190623">June 23, 2019</td>
+          <td>June 23/2019</td>
 
         </tr>
         <tr>
@@ -307,7 +304,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180818">August 18</td>
+          <td>8/18/2018</td>
 
         </tr>
         <tr>
@@ -316,7 +313,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
         <tr>
@@ -325,7 +322,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
         <tr>
@@ -334,7 +331,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
         <tr>
@@ -343,7 +340,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
         <tr>
@@ -352,7 +349,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
         <tr>
@@ -361,7 +358,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
         <tr>
@@ -370,7 +367,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
         <tr>
@@ -379,7 +376,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180514">May 14</td>
+          <td>5/14/2018</td>
 
         </tr>
         <tr>
@@ -388,7 +385,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
         <tr>
@@ -397,7 +394,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
           <td>New York City</td>
           <td>Solstice & Equinox</td>
-          <td sorttable_customkey="20181221">December 21</td>
+          <td>12/21/2018</td>
 
         </tr>
 
@@ -407,7 +404,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180422">April 22</td>
+          <td>4/22/2018</td>
 
         </tr>
 
@@ -417,7 +414,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180812">August 12</td>
+          <td>8/12/2018</td>
 
         </tr>
 
@@ -427,7 +424,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180509">May 9</td>
+          <td>5/9/2018</td>
 
         </tr>
 
@@ -437,7 +434,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
 
@@ -447,7 +444,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>Ongoing</td>
 
         </tr>
 
@@ -457,7 +454,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
 
@@ -469,7 +466,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180603">June 3</td>
+          <td>6/3/2018</td>
 
         </tr>
 
@@ -479,7 +476,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180528">May 28</td>
+          <td>5/28/2018</td>
 
         </tr>
 
@@ -489,7 +486,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180919">August 19</td>
+          <td>8/19/2018</td>
 
         </tr>
 
@@ -499,7 +496,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181104">11/4/2018</td>
+          <td>11/4/2018</td>
 
         </tr>
 
@@ -509,7 +506,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180618">June 18</td>
+          <td>6/18/2018</td>
 
         </tr>
 
@@ -518,8 +515,8 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/3925">Julia Phillips: Failure Detection</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td>OPEN</td>
-          <td sorttable_customkey="20180903">September 3</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
 
         </tr>
 
@@ -528,8 +525,8 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/3926">Projects 108: Gauri Gill</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td>OPEN</td>
-          <td sorttable_customkey="20180903">September 3</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
 
         </tr>
 
@@ -538,8 +535,8 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/4963">Fernando Palma Rodríguez: In Ixtli in Yolotl</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td>OPEN</td>
-          <td sorttable_customkey="20180919">September 10</td>
+          <td>4/15</td>
+          <td>9/10/2018</td>
 
         </tr>
 
@@ -548,8 +545,8 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/4968">Land: Zhang Huan and Li Binyuan</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td>OPEN</td>
-          <td sorttable_customkey="20180903">September 3</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
 
         </tr>
         <tr>
@@ -558,7 +555,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
           <td>June</td>
-          <td sorttable_customkey="20180930">September 30</td>
+          <td>9/30/2018</td>
 
         </tr>
         <tr>
@@ -566,8 +563,8 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/3929">Reza Abdoh</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td sorttable_customkey="20180603">June 3</td>
-          <td sorttable_customkey="20180903">September 3</td>
+          <td>6/3</td>
+          <td>9/3/2018</td>
 
         </tr>
         <tr>
@@ -575,18 +572,18 @@ tr:nth-child(even) {
           <td><a href="https://www.moma.org/calendar/exhibitions/3852">Bruce Nauman: Disappearing Acts</a></td>
           <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
           <td>New York City</td>
-          <td sorttable_customkey="20181021">October 21</td>
-          <td sorttable_customkey="20190317">March 17, 2019</td>
+          <td>10/21/2018</td>
+          <td>3/17/2019</td>
 
         </tr>
-
+<!--Morgan -->
         <tr>
 
           <td><a href="http://www.themorgan.org/exhibitions/tennessee-williams">Tennessee Williams: No Refuge but Writing</a></td>
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
 
         </tr>
         <tr>
@@ -595,7 +592,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180520">May 20</td>
+          <td>5/20/2018</td>
 
         </tr>
         <tr>
@@ -604,7 +601,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180429">April 29</td>
+          <td>4/29/2018</td>
 
         </tr>
         <tr>
@@ -613,7 +610,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180429">April 29</td>
+          <td>4/29/2018</td>
 
         </tr>
         <tr>
@@ -622,7 +619,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180624">June 24</td>
+          <td>6/24/2018</td>
 
         </tr>
         <tr>
@@ -631,7 +628,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181209">December 9</td>
+          <td>12/9/2018</td>
 
         </tr>
 
@@ -642,7 +639,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/EWDCyTgVKXw">Neue Galerie</a></td>
           <td>New York City</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181209">December 9</td>
+          <td>12/9/2018</td>
 
         </tr>
 
@@ -651,8 +648,8 @@ tr:nth-child(even) {
           <td><a href="http://www.neuegalerie.org/content/gustav-klimt-and-egon-schiele-1918-centenary-0">Gustav Klimt and Egon Schiele: 1918 Centenary</a></td>
           <td><a href="https://goo.gl/maps/EWDCyTgVKXw">Neue Galerie</a></td>
           <td>New York City</td>
-          <td sorttable_customkey="20180628">June 28</td>
-          <td sorttable_customkey="20180904">September 4</td>
+          <td>6/28</td>
+          <td>9/4/2018</td>
 
         </tr>
 
@@ -662,7 +659,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
 
@@ -672,7 +669,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190127">January 27, 2019</td>
+          <td>1/27/2019</td>
 
         </tr>
 
@@ -682,7 +679,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180819">August 19</td>
+          <td>8/19/2018</td>
 
         </tr>
 
@@ -692,7 +689,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20190127">January 27, 2019</td>
+          <td>1/27/2019</td>
 
         </tr>
 
@@ -702,7 +699,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180521">May 21</td>
+          <td>5/21/2018</td>
 
         </tr>
 
@@ -712,7 +709,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181231">December 31</td>
+          <td>12/31/2019</td>
 
         </tr>
 
@@ -722,7 +719,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180812">August 12</td>
+          <td>8/12/2018</td>
 
         </tr>
 
@@ -733,7 +730,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180527">May 27</td>
+          <td>5/27/2018</td>
 
         </tr>
 
@@ -743,7 +740,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
           <td>New Haven</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180819">August 19</td>
+          <td>8/19/2018</td>
 
         </tr>
 
@@ -752,8 +749,8 @@ tr:nth-child(even) {
           <td><a href="http://stormking.org/indicators/">Indicators: Artists on Climate Change</a></td>
           <td><a href="https://goo.gl/maps/9Jpo513gvdT2">Storm King</a></td>
           <td>New Windsor, NY</td>
-          <td sorttable_customkey="20180519">May 19</td>
-          <td sorttable_customkey="20181111">November 11</td>
+          <td>5/19</td>
+          <td>11/11/2018</td>
 
         </tr>
 
@@ -762,8 +759,8 @@ tr:nth-child(even) {
           <td><a href="http://stormking.org/2018-exhibitions/">Outlooks: Elaine Cameron-Weir</a></td>
           <td><a href="https://goo.gl/maps/9Jpo513gvdT2">Storm King</a></td>
           <td>New Windsor, NY</td>
-          <td sorttable_customkey="20180519">May 19</td>
-          <td sorttable_customkey="20181125">November 25</td>
+          <td>5/19/2018</td>
+          <td>11/25/2018</td>
 
         </tr>
 
@@ -773,7 +770,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180708">July 8</td>
+          <td>7/8/2018</td>
 
         </tr>
 
@@ -783,7 +780,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180527">May 27</td>
+          <td>5/27/2018</td>
 
         </tr>
 
@@ -793,7 +790,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20990101">Ongoing</td>
+          <td>ONGOING</td>
 
         </tr>
 
@@ -802,8 +799,8 @@ tr:nth-child(even) {
           <td><a href="https://www.warhol.org/exhibition/adman-warhol-pop/">Adman: Warhol Before Pop</a></td>
           <td><a href="https://goo.gl/maps/2b9FNPwT5ut">Andy Warhol Museum</a></td>
           <td>Pittsburgh</td>
-          <td sorttable_customkey="20180427">April 27</td>
-          <td sorttable_customkey="20180908">September 8</td>
+          <td>4/27</td>
+          <td>9/8/2018</td>
 
         </tr>
 
@@ -813,7 +810,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180506">May 6</td>
+          <td>5/6/2018</td>
 
         </tr>
 
@@ -823,7 +820,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180528">May 28</td>
+          <td>5/28/2018</td>
 
         </tr>
 
@@ -833,7 +830,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
 
@@ -843,7 +840,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180624">June 24</td>
+          <td>6/24/2018</td>
 
         </tr>
 
@@ -853,7 +850,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180722">July 22</td>
+          <td>7/22/2018</td>
 
         </tr>
 
@@ -863,7 +860,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
           <td>Pittsburgh</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20191101">November 1, 2019</td>
+          <td>11/1/2019</td>
 
         </tr>
 
@@ -872,10 +869,12 @@ tr:nth-child(even) {
           <td><a href="http://thewestmoreland.org/exhibitions/the-art-of-giving/">The Art of Giving: Selections from the Richard M. Scaife Bequest</a></td>
           <td><a href="https://goo.gl/maps/AnZSyHWdpwR2">The Westmoreland County Museum of Art</a></td>
           <td>Greensburg, PA</td>
-          <td sorttable_customkey="20180512">May 12</td>
-          <td sorttable_customkey="20180805">August 5</td>
+          <td>5/12</td>
+          <td>8/5/2018</td>
 
         </tr>
+
+<!--Cleveland-->
 
         <tr>
 
@@ -883,7 +882,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
 
         </tr>
 
@@ -893,7 +892,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20181111">November 11</td>
+          <td>11/11/2018</td>
 
         </tr>
 
@@ -903,7 +902,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
 
         </tr>
 
@@ -913,7 +912,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180506">May 6</td>
+          <td>5/6/2018</td>
 
         </tr>
 
@@ -923,7 +922,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180520">May 20</td>
+          <td>5/20/2018</td>
 
         </tr>
 
@@ -933,7 +932,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180606">June 6</td>
+          <td>6/6/2018</td>
 
         </tr>
         <tr>
@@ -942,7 +941,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/WEjhV5yqMju">Cleveland Museum of Art - Transformer Station</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180513">May 13</td>
+          <td>5/13/2018</td>
 
         </tr>
 
@@ -952,7 +951,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
 
@@ -962,7 +961,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
 
@@ -972,7 +971,7 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180930">September 30</td>
+          <td>9/30/2018</td>
 
         </tr>
 
@@ -982,10 +981,9 @@ tr:nth-child(even) {
           <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
           <td>Cleveland</td>
           <td>OPEN</td>
-          <td sorttable_customkey="20180610">June 10</td>
+          <td>6/10/2018</td>
 
         </tr>
-
 
 
 <!--generic tr data
@@ -997,7 +995,27 @@ tr:nth-child(even) {
   <td><a href="##">MUSEUM NAME</a></td>
   <td>LOCATION</td>
   <td>OPEN</td>
-  <td sorttable_customkey="2018mmdd">Closes</td>
+  <td>Closes</td>
+
+</tr>
+
+<tr>
+
+  <td><a href="#">##</a></td>
+  <td><a href="##">MUSEUM NAME</a></td>
+  <td>LOCATION</td>
+  <td>OPEN</td>
+  <td>Closes</td>
+
+</tr>
+
+<tr>
+
+  <td><a href="#">##</a></td>
+  <td><a href="##">MUSEUM NAME</a></td>
+  <td>LOCATION</td>
+  <td>OPEN</td>
+  <td>Closes</td>
 
 </tr>
 
@@ -1017,7 +1035,7 @@ tr:nth-child(even) {
 </div>
 
 
-<!-- sortTable function from w3c https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc...commented out to try sorttable from kryogenix
+<!-- sortTable function from w3c https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
 
 <script>
 function sortTable(n) {
@@ -1076,7 +1094,7 @@ function sortTable(n) {
 }
 </script>
 
--->
+
 
 
 
