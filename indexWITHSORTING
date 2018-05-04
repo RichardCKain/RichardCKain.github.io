@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+th {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+tr:nth-child(even) {
+    background: #e9e9e9;
+}
+</style>
+
+<base target="_blank">
+
+</head>
+
+
+
+<body>
+
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>The Art Exhibit Search Sheet</h1>
+  </div>
+
+<!-- search bar  -->
+
+  <div data-role="main" class="ui-content">
+    <form>
+      <input id="filterTable-input" data-type="search" placeholder="Search For Museums, Exhibitions, or Location...">
+    </form>
+
+
+
+    <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable" data-filter="true" data-input="#filterTable-input">
+      <thead>
+        <tr>
+
+        <!--removed data priority 6-->
+
+        <!--could add small image to catalog book here as first column??-->
+
+          <th  data-priority="1">Exhibition</th> <!--doesn't work as 'sortTable(0)' weirdly...other columns work....nope it's the html issue so removed onclick="sortTable(0)"-->
+          <th data-priority="2">Location</th> <!--removed  onclick="sortTable(1)" -->
+          <th onclick="sortTable(2)" data-priority="3">City or Region</th>
+          <th onclick="sortTable(3)" data-priority="5">Start</th>
+          <th onclick="sortTable(4)" data-priority="4">Finish</th>
+          <!-- <th data-priority="6">Artists</th> eliminating this for 1.0-->
+          <!--could add link to catalog book here as seventh column?? ADDING SORTTABLE FROM W3-->
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/birds-of-a-feather">Birds of a Feather: Joseph Cornell's Homage to Juan Gris</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>4/15/2018</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/thomas-cole">Thomas Cole's Journey: Atlantic Crossings</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/leon-golub">Leon Golub: Raw Nerve</a></td>
+          <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/golden-kingdoms">Golden Kingdoms: Luxury & Legacy in the Ancient Americas</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/28/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/like-life">Like Life: Sculpture, Color, and the Body (1300–Now)</a></td>
+          <td><a href="https://goo.gl/maps/4SdbrHczLBF2">The Met - Breuer</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/public-parks-private-gardens">Public Parks, Private Gardens: Paris to Provence</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/29/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/diamond-mountains">Diamond Mountains: Travel and Nostalgia in Korean Art</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>20/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/william-eggleston-los-alamos">William Eggleston: Los Alamos</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/28/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/poetry-of-nature">The Poetry of Nature: Edo Paintings from the Fishbein-Bender Collection</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>1/21/2019</td>
+
+        </tr>
+
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/drawings-and-prints-february-rotation">Selections from the Department of Drawings and Prints: Portraits and States</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>4/30/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/portable-storage">Portable Storage: Tribal Weavings from the Collection of William and Inger Ginsberg</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/7/2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/scholastic-awards">Scholastic Art & Writing Awards: New York City Regional Exhibition</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/28/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/american-painters-in-italy">American Painters in Italy: From Copley to Sargent</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>June 17/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/year-of-dog">Celebrating the Year of the Dog</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 4/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/william-wegman">Before/On/After: William Wegman and California Conceptualism</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 15/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/spirited-creatures">Spirited Creatures: Animal Representations in Chinese Silk and Lacquer</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>July 22/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/passion-for-jade">A Passion for Jade: Heber Bishop and His Collection</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/public-service-announcement">Public Service Announcement: Works by Eva Koťátková and Rachel Harrison</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/29/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/ranjani-shettar">Ranjani Shettar: Seven ponds and a few raindrops</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>8/12/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/face-of-dynasty-royal-crests-western-cameroon">The Face of Dynasty: Royal Crests from Western Cameroon</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>9/3/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/kharga-oasis">Art and Peoples of the Kharga Oasis</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>9/30/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/crowns-of-vajra-masters">Crowns of the Vajra Masters: Ritual Art of Nepal</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>12/16/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/secret-life-of-textiles">The Secret Life of Textiles: The Milton Sonday Archive</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>12/31/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/dangerous-beauty">Dangerous Beauty: Medusa in Classical Art</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>1/6/2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2018/japanese-arms-and-armor">Japanese Arms and Armor from the Collection of Etsuko and John Morris</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>1/6/2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/relative-values-northern-renaissance">Relative Values: The Cost of Art in the Northern Renaissance</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>June 23/2019</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.metmuseum.org/exhibitions/listings/2017/streams-and-mountains">Streams and Mountains without End: Landscape Traditions of China</a></td>
+          <td><a href="https://goo.gl/maps/mrR1jefvH7U2">The Met - Fifth Avenue</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>8/18/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/GrantWood">Grant Wood: American Gothic and Other Fables</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/ZoeLeonard">Zoe Leonard: Survey</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/BetweenTheWaters">Between The Waters</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/AnIncompleteHistoryOfProtest">An Incomplete History of Protest: Selections from the Whitney’s Collection, 1940–2017</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/JuanAntonioOlivares">Juan Antonio Olivares: Moléculas</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/ChristineSunKim">Christine Sun Kim: Too Much Future</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/WhereWeAre">Where We Are: Selections from the Whitney's Collection, 1900-1960</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/NickMauss">Nick Mauss: Transmissions</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/14/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/HaroldEdgerton">Flash: Photographs by Harold Edgerton from the Whitney's Collection</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.whitney.org/Exhibitions/SibylKempson">Silby Kempson: 12 Shouts to the Ten Forgotten Heavens</a></td>
+          <td><a href="https://goo.gl/maps/P7WjKLwFGEE2">Whitney</a></td>
+          <td>New York City</td>
+          <td>Solstice & Equinox</td>
+          <td>12/21/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.frick.org/exhibitions/zurbaran">Zurbarán's Jacob and His Twelve Sons: Paintings from Auckland Castle</a></td>
+          <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>4/22/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.frick.org/exhibitions/du_paquier">Fired by Passion: Masterpieces of Du Paquier Porcelain from the Sullivan Collection</a></td>
+          <td><a href="https://goo.gl/maps/xGURfctLDPk">The Frick Collection</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>8/12/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/danh-vo">Danh Vo: Take My Breath Away</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/9/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/thannhauser-collection">Thannhauser Collection</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.guggenheim.org/exhibition/guggenheim-collection-brancusi">Guggenheim Collection: Brancusi</a></td>
+          <td><a href="https://goo.gl/maps/tFXrd7mx9uF2">Guggenheim</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>Ongoing</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3924">Adrian Piper: A Synthesis of Intuitions, 1965–2016</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+
+
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3871">Tarsila do Amaral: Inventing Modern Art in Brazil</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/3/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3769">Stephen Shore</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/28/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3886">Being: New Photography 2018</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>8/19/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3879">The Long Run</a></td>
+          <td><a href="https://goo.gl/maps/6tNYadNwtqz">MoMA</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>11/4/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3928">Maria Lassnig: New York Films 1970–1980</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/18/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3925">Julia Phillips: Failure Detection</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3926">Projects 108: Gauri Gill</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4963">Fernando Palma Rodríguez: In Ixtli in Yolotl</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>4/15</td>
+          <td>9/10/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4968">Land: Zhang Huan and Li Binyuan</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>4/15</td>
+          <td>9/3/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/4956">Young Architects Program 2018: Hide & Seek by Dream the Combine</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>June</td>
+          <td>9/30/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3929">Reza Abdoh</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>6/3</td>
+          <td>9/3/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="https://www.moma.org/calendar/exhibitions/3852">Bruce Nauman: Disappearing Acts</a></td>
+          <td><a href="https://goo.gl/maps/GJfr5oEFFfJ2">MoMA PS1</a></td>
+          <td>New York City</td>
+          <td>10/21/2018</td>
+          <td>3/17/2019</td>
+
+        </tr>
+<!--Morgan -->
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/tennessee-williams">Tennessee Williams: No Refuge but Writing</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/peter-hujar">Peter Hujar: Speed of Life</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>5/20/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/now-and-forever">Now and Forever: The Art of Medieval Time</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>4/29/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/power-and-grace">Power and Grace: Drawings by Rubens, Van Dyck, and Jordaens</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>4/29/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/saint-exupery-dossier">Joseph Cornell: The Saint-Exupéry Dossier</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>6/24/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.themorgan.org/exhibitions/rivers-and-torrents">Rivers and Torrents: Oil Sketches from the Thaw Collection</a></td>
+          <td><a href="https://goo.gl/maps/h7JELHAmzTs">Morgan Library</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>12/9/2018</td>
+
+        </tr>
+
+
+        <tr>
+
+          <td><a href="http://www.neuegalerie.org/content/before-the-fall-german-and-austrian-art-1930s">Before the Fall: German and Austrian Art of the 1930s</a></td>
+          <td><a href="https://goo.gl/maps/EWDCyTgVKXw">Neue Galerie</a></td>
+          <td>New York City</td>
+          <td>OPEN</td>
+          <td>12/9/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.neuegalerie.org/content/gustav-klimt-and-egon-schiele-1918-centenary-0">Gustav Klimt and Egon Schiele: 1918 Centenary</a></td>
+          <td><a href="https://goo.gl/maps/EWDCyTgVKXw">Neue Galerie</a></td>
+          <td>New York City</td>
+          <td>6/28</td>
+          <td>9/4/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://artgallery.yale.edu/exhibitions/exhibition/joel-shapiro-plaster-paper-wood-and-wire">Joel Shapiro: Plaster, Paper, Wood, and Wire</a></td>
+          <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://artgallery.yale.edu/exhibitions/exhibition/manuel-neri-human-figure-plaster-and-paper">Manuel Neri: The Human Figure in Plaster and on Paper</a></td>
+          <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>1/27/2019</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://artgallery.yale.edu/exhibitions/exhibition/pompeii-photographs-and-fragments">Pompeii: Photographs and Fragments</a></td>
+          <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>8/19/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://artgallery.yale.edu/exhibitions/exhibition/sol-lewitt-wall-drawings-expanding-legacy">Sol LeWitt Wall Drawings: Expanding a Legacy</a></td>
+          <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>1/27/2019</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://artgallery.yale.edu/exhibitions/exhibition/japans-global-baroque-1550-1650">Japan’s Global Baroque, 1550–1650</a></td>
+          <td><a href="https://goo.gl/maps/Xwm6vPG8RHB2">Yale Art Gallery</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>5/21/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://britishart.yale.edu/exhibitions/britain-world">Britain in the World</a></td>
+          <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>12/31/2019</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://britishart.yale.edu/exhibitions/celia-paul">Celia Paul</a></td>
+          <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>8/12/2018</td>
+
+        </tr>
+
+
+        <tr>
+
+          <td><a href="https://britishart.yale.edu/exhibitions/paston-treasure-microcosm-known-world">The Paston Treasure: Microcosm of the Known World</a></td>
+          <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>5/27/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://britishart.yale.edu/exhibitions/art-focus-john-gotos-high-summer">Art in Focus: John Goto’s “High Summer”</a></td>
+          <td><a href="https://goo.gl/maps/a2xy4X6atFU2">Yale Center for British Art</a></td>
+          <td>New Haven</td>
+          <td>OPEN</td>
+          <td>8/19/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://stormking.org/indicators/">Indicators: Artists on Climate Change</a></td>
+          <td><a href="https://goo.gl/maps/9Jpo513gvdT2">Storm King</a></td>
+          <td>New Windsor, NY</td>
+          <td>5/19</td>
+          <td>11/11/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://stormking.org/2018-exhibitions/">Outlooks: Elaine Cameron-Weir</a></td>
+          <td><a href="https://goo.gl/maps/9Jpo513gvdT2">Storm King</a></td>
+          <td>New Windsor, NY</td>
+          <td>5/19/2018</td>
+          <td>11/25/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.thefrickpittsburgh.org/Exhibition-Van-Gogh-Monet-Degas-The-Mellon-Collection-of-French-Art-from-the-Virginia-Museum-of-Fine-Arts">Van Gogh, Monet, Degas: The Mellon Collection of French Art from the Virginia Museum of Fine Arts</a></td>
+          <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>7/8/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.thefrickpittsburgh.org/Exhibition-Revive-Remix-Respond-Contemporary-Ceramic-Artists-and-The-Frick-Pittsburgh">Revive, Remix, Respond</a></td>
+          <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>5/27/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.thefrickpittsburgh.org/Exhibition-From-Carriages-to-Cars">From Carriages to Cars</a></td>
+          <td><a href="https://goo.gl/maps/eDHunLA823z">The Frick Pittsburgh</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>ONGOING</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://www.warhol.org/exhibition/adman-warhol-pop/">Adman: Warhol Before Pop</a></td>
+          <td><a href="https://goo.gl/maps/2b9FNPwT5ut">Andy Warhol Museum</a></td>
+          <td>Pittsburgh</td>
+          <td>4/27</td>
+          <td>9/8/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/copy-paste/">Copy + Paste: Hall of Architecture</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>5/6/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/service-sacrifice/">Teenie Harris Photographs: Service and Sacrifice</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>5/28/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/hiroshiges-tokaido-road/">Hiroshige’s Tōkaidō Road</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/visions-of-order-and-chaos/">Visions of Order and Chaos: The Enlightened Eye</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>6/24/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/deana-lawson/">Deana Lawson</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>7/22/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="https://cmoa.org/exhibition/created-collected-conserved-the-life-stories-of-paintings/">Created, Collected, Conserved: The Life Stories of Paintings</a></td>
+          <td><a href="https://goo.gl/maps/JRttF1ERG4u">Carnegie Museum of Art</a></td>
+          <td>Pittsburgh</td>
+          <td>OPEN</td>
+          <td>11/1/2019</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://thewestmoreland.org/exhibitions/the-art-of-giving/">The Art of Giving: Selections from the Richard M. Scaife Bequest</a></td>
+          <td><a href="https://goo.gl/maps/AnZSyHWdpwR2">The Westmoreland County Museum of Art</a></td>
+          <td>Greensburg, PA</td>
+          <td>5/12</td>
+          <td>8/5/2018</td>
+
+        </tr>
+
+<!--Cleveland-->
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/rodin%E2%80%94100-years">Rodin—100 Years</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/william-morris-designing-earthly-paradise">William Morris: Designing an Earthly Paradise</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>11/11/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/graphic-discontent-german-expressionism-paper">Graphic Discontent: German Expressionism on Paper</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/brett-weston-photographs">Brett Weston: Photographs</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>5/6/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/eyewitness-views-making-history-eighteenth-century-europe">Eyewitness Views: Making History in Eighteenth-Century Europe</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>5/20/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/recent-acquisitions-2014%E2%80%932017">Recent Acquisitions 2014–2017</a></td>
+          <td><a href="https://goo.gl/maps/LcZo2psiCaJ2">Cleveland Museum of Art</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>6/6/2018</td>
+
+        </tr>
+        <tr>
+
+          <td><a href="http://www.clevelandart.org/exhibitions/transformer-station/dana-schutz-eating-atom-bombs">Dana Schutz: Eating Atom Bombs</a></td>
+          <td><a href="https://goo.gl/maps/WEjhV5yqMju">Cleveland Museum of Art - Transformer Station</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>5/13/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.mocacleveland.org/exhibitions/induction-tauba-auerbach-and-%C3%A9liane-radigue">INDUCTION: Tauba Auerbach and Éliane Radigue</a></td>
+          <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.mocacleveland.org/exhibitions/simon-denny-founders-paradox">Simon Denny: The Founder's Paradox</a></td>
+          <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.mocacleveland.org/exhibitions/claudia-comte-zigzags-and-diagonals">Claudia Comte: Zigzags and Diagonals</a></td>
+          <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>9/30/2018</td>
+
+        </tr>
+
+        <tr>
+
+          <td><a href="http://www.mocacleveland.org/exhibitions/mei-jia-ting-ting-chih-fu-sin-ji-c-spencer-yeh">Mei-Jia & Ting-Ting & Chih-Fu & Sin-Ji: C. Spencer Yeh</a></td>
+          <td><a href="https://goo.gl/maps/tp7oyhXojy92">Museum of Contemporary Art Cleveland</a></td>
+          <td>Cleveland</td>
+          <td>OPEN</td>
+          <td>6/10/2018</td>
+
+        </tr>
+
+
+<!--generic tr data
+
+
+<tr>
+
+  <td><a href="#">##</a></td>
+  <td><a href="##">MUSEUM NAME</a></td>
+  <td>LOCATION</td>
+  <td>OPEN</td>
+  <td>Closes</td>
+
+</tr>
+
+<tr>
+
+  <td><a href="#">##</a></td>
+  <td><a href="##">MUSEUM NAME</a></td>
+  <td>LOCATION</td>
+  <td>OPEN</td>
+  <td>Closes</td>
+
+</tr>
+
+<tr>
+
+  <td><a href="#">##</a></td>
+  <td><a href="##">MUSEUM NAME</a></td>
+  <td>LOCATION</td>
+  <td>OPEN</td>
+  <td>Closes</td>
+
+</tr>
+
+-->
+
+
+
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <div data-role="footer">
+    <h1>Hope this was useful! Send comments and suggestions to rich@triplepointpr.com</h1>
+  </div>
+</div>
+
+
+<!-- sortTable function from w3c https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc-->
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc";
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.getElementsByTagName("TR");
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
